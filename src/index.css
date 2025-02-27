@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+body {
+  margin: 0;
+
+  background-color: var(--white);
+  color: var(--dark-main);
+
+  font-family: var(--main-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  /* max-width: 100%; */
+}
+
+a:focus,
+button:focus {
+  outline: 1px solid transparent;
+}
+
+button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+:root {
+  --white: #ffffff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+
+  --dark-main: #101828;
+  --grey-light: #dadde1;
+  --grey: #8e929a;
+
+  --blue: #3470ff;
+  --hover-blue: #0b44cd;
+
+  --primary-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --main-font-family: 'Manrope', sans-serif;
+  --second-font-family: 'Inter', sans-serif;
+}
