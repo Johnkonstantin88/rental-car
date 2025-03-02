@@ -23,10 +23,8 @@ export const StyledHomeContainer = styled.div`
 
 export const StyledHero = styled.div`
   position: relative;
-  /* display: flex; */
-  /* flex-direction: column; */
   height: 700px;
-  /* align-items: center; */
+  margin-top: 4px;
 `;
 
 export const HeroContent = styled.div`
@@ -52,7 +50,6 @@ export const HeroTitle = styled.h1`
 `;
 
 export const HeroSubTitle = styled.h2`
-  /* font-family: var(--main-font-family); */
   font-weight: 600;
   font-size: 24px;
   line-height: 1.3;

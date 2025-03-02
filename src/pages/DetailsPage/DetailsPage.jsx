@@ -1,5 +1,7 @@
+import { StyledContainer } from '../../components/SharedLayout/SharedLayout.styled';
+
 const DetailsPage = () => {
-  return <div>DetailsPage</div>;
+  return <StyledContainer>DetailsPage</StyledContainer>;
 };
 
 export default DetailsPage;

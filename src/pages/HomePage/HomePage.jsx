@@ -1,22 +1,23 @@
 import { NavLink } from 'react-router-dom';
 import CustomButton from '../../components/CustomButton/CustomButton';
-import { StyledContainer } from '../../components/SharedLayout/SharedLayout.styled';
 import {
   HeroContent,
   HeroSubTitle,
   HeroTitle,
   StyledHero,
   StyledHeroSection,
+  StyledHomeContainer,
 } from './HomePage.styled';
 
 const HomePage = () => {
   return (
     <>
       <StyledHeroSection>
-        <StyledContainer>
+        <StyledHomeContainer>
           <StyledHero>
             <HeroContent>
               <div>
+                <title>Home</title>
                 <HeroTitle>Find your perfect rental car</HeroTitle>
                 <HeroSubTitle>
                   Reliable and budget-friendly rentals for any journey
@@ -34,7 +35,7 @@ const HomePage = () => {
               </CustomButton>
             </HeroContent>
           </StyledHero>
-        </StyledContainer>
+        </StyledHomeContainer>
       </StyledHeroSection>
     </>
   );

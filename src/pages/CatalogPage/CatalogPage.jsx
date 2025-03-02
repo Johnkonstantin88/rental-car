@@ -1,35 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchBrands } from '../../redux/brands/operations';
-import { fetchCars } from '../../redux/cars/operations';
-
-import { selectCars } from '../../redux/cars/selectors';
-import { selectFilter } from '../../redux/filter/selectors';
-
+import { useSelector } from 'react-redux';
 import CatalogForm from '../../components/CatalogForm/CatalogForm';
+import CatalogList from '../../components/CatalogList/CatalogList';
+import Loader from '../../components/Loader/Loader';
+import { StyledContainer } from '../../components/SharedLayout/SharedLayout.styled';
+import { selectIsLoading } from '../../redux/cars/selectors';
 
 const CatalogPage = () => {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const cars = useSelector(selectCars);
-  const filter = useSelector(selectFilter);
-
-  const dispatch = useDispatch();
-
-  console.log(cars);
-
-  useEffect(() => {
-    dispatch(fetchBrands());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchCars(filter));
-  }, [dispatch, filter]);
-
+  const isLoading = useSelector(selectIsLoading);
   return (
-    <div>
-      <CatalogForm menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-    </div>
+    <section>
+      <StyledContainer>
+        <title>Catalog</title>
+        <CatalogForm />
+        <CatalogList />
+      </StyledContainer>
+      <Loader loading={isLoading} />
+    </section>
   );
 };
 

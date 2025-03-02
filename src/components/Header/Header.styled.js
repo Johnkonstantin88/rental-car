@@ -7,7 +7,6 @@ export const StyledHeader = styled.header`
   border-bottom-width: 1px;
   padding-top: 24px;
   padding-bottom: 24px;
-  margin-bottom: 4px;
 `;
 
 export const StyledHeaderContainer = styled.div`
