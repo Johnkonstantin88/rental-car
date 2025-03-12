@@ -70,7 +70,7 @@ const CatalogListItem = ({ car }) => {
         </StyledDescription>
         <StyledDescription>
           <li>{type}</li>
-          <li>{mileage}</li>
+          <li>{new Intl.NumberFormat().format(mileage)}</li>
         </StyledDescription>
       </StyledDescriptionWrapper>
       <CustomButton type="button">

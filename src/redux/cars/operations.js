@@ -21,3 +21,16 @@ export const fetchCars = createAsyncThunk(
     }
   }
 );
+
+export const fetchCarDetails = createAsyncThunk(
+  'cars/fetchOne',
+  async (carId, thunkAPI) => {
+    try {
+      const response = await rentalCarInstance.get(`/cars/${carId}`);
+
+      return response.data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

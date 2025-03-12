@@ -19,6 +19,7 @@ import {
   StyledRightInput,
   StyledRightInputSpan,
 } from './CatalogForm.styled';
+import { parseInputValue } from '../../utils/parseInputValue';
 
 const CatalogForm = () => {
   const [values, setValues] = useState({
@@ -64,7 +65,12 @@ const CatalogForm = () => {
   const handleInputChange = useCallback(
     e => {
       const { name, value } = e.target;
-      setValues({ ...values, [name]: value });
+      const number = parseInt(value) || '';
+
+      setValues({
+        ...values,
+        [name]: new Intl.NumberFormat('en-US').format(number),
+      });
     },
     [values]
   );
@@ -90,8 +96,8 @@ const CatalogForm = () => {
       changeBrandFilter({
         brand,
         rentalPrice,
-        minMileage,
-        maxMileage,
+        minMileage: parseInputValue(minMileage),
+        maxMileage: parseInputValue(maxMileage),
         limit,
         page,
       })
@@ -138,21 +144,21 @@ const CatalogForm = () => {
           <StyledLeftInput
             name="minMileage"
             id={minMileageFieldId}
-            type="number"
-            min={1000}
-            max={10000}
+            type="text"
+            maxLength={6}
             autoComplete="off"
             onChange={handleInputChange}
+            value={minMileage || ''}
           />
           <StyledLeftInputSpan>From</StyledLeftInputSpan>
           <StyledRightInput
             name="maxMileage"
             id={maxMileageFieldId}
-            type="number"
-            min={1000}
-            max={10000}
+            type="text"
+            maxLength={6}
             autoComplete="off"
             onChange={handleInputChange}
+            value={maxMileage || ''}
           />
           <StyledRightInputSpan>To</StyledRightInputSpan>
         </div>

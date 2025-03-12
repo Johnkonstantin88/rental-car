@@ -25,16 +25,9 @@ export const filterSlice = createSlice({
         page: payload.page,
       };
     },
-    changePaginationFilter(state, { payload }) {
-      state.filter = {
-        limit: payload.limit,
-        page: payload.page,
-      };
-    },
   },
 });
 
-export const { changeBrandFilter, changePaginationFilter } =
-  filterSlice.actions;
+export const { changeBrandFilter } = filterSlice.actions;
 
 export const filterReducer = filterSlice.reducer;
