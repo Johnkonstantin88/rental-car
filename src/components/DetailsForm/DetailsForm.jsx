@@ -38,11 +38,13 @@ const DetailsForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     try {
       const { bookingDate } = values;
-      const isFutureDate =
-        new Date(bookingDate).toISOString() > new Date().toISOString();
+      const today = new Date().toISOString().split('T')[0];
+      const isValidDate = bookingDate >= today;
 
-      if (!isFutureDate) {
-        toast.error('To book a car, please select a date in the future.');
+      if (!isValidDate) {
+        toast.error(
+          "To book a car, please enter today's date or a future date."
+        );
         return;
       }
 
